@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="projectDBModel2StoreContainer" CdmEntityContainer="projectDBEntities2">
+    <EntitySetMapping Name="AdminRegistrations">
+      <EntityTypeMapping TypeName="projectDBModel2.AdminRegistration">
+        <MappingFragment StoreEntitySet="AdminRegistration">
+          <ScalarProperty Name="AdminId" ColumnName="AdminId" />
+          <ScalarProperty Name="AdminFirstName" ColumnName="AdminFirstName" />
+          <ScalarProperty Name="AdminLastName" ColumnName="AdminLastName" />
+          <ScalarProperty Name="AdminEmail" ColumnName="AdminEmail" />
+          <ScalarProperty Name="AdminPassword" ColumnName="AdminPassword" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="projectDBModel1" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="viewapplicant">
+    <Key>
+      <PropertyRef Name="appID" />
+    </Key>
+    <Property Name="appID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="appName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="appLocation" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="appPhone" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="appEmail" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="appRegDate" Type="DateTime" Precision="0" />
+    <Property Name="appTypes" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityContainer Name="projectDBEntities1" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="viewapplicants" EntityType="Self.viewapplicant" />
+  </EntityContainer>
+</Schema>

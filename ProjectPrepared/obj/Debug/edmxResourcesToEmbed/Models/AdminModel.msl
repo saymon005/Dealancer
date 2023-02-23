@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="projectDBModel1StoreContainer" CdmEntityContainer="projectDBEntities1">
+    <EntitySetMapping Name="viewapplicants">
+      <EntityTypeMapping TypeName="projectDBModel1.viewapplicant">
+        <MappingFragment StoreEntitySet="viewapplicant">
+          <ScalarProperty Name="appID" ColumnName="appID" />
+          <ScalarProperty Name="appName" ColumnName="appName" />
+          <ScalarProperty Name="appLocation" ColumnName="appLocation" />
+          <ScalarProperty Name="appPhone" ColumnName="appPhone" />
+          <ScalarProperty Name="appEmail" ColumnName="appEmail" />
+          <ScalarProperty Name="appRegDate" ColumnName="appRegDate" />
+          <ScalarProperty Name="appTypes" ColumnName="appTypes" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

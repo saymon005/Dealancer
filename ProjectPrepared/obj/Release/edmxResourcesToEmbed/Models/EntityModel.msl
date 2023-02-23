@@ -1,0 +1,100 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="projectDBModelStoreContainer" CdmEntityContainer="projectDBEntities">
+    <EntitySetMapping Name="AdminRegistrations">
+      <EntityTypeMapping TypeName="projectDBModel.AdminRegistration">
+        <MappingFragment StoreEntitySet="AdminRegistration">
+          <ScalarProperty Name="AdminId" ColumnName="AdminId" />
+          <ScalarProperty Name="AdminFirstName" ColumnName="AdminFirstName" />
+          <ScalarProperty Name="AdminLastName" ColumnName="AdminLastName" />
+          <ScalarProperty Name="AdminEmail" ColumnName="AdminEmail" />
+          <ScalarProperty Name="AdminPassword" ColumnName="AdminPassword" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="applicaitions">
+      <EntityTypeMapping TypeName="projectDBModel.applicaition">
+        <MappingFragment StoreEntitySet="applicaition">
+          <ScalarProperty Name="reqID" ColumnName="reqID" />
+          <ScalarProperty Name="reqName" ColumnName="reqName" />
+          <ScalarProperty Name="reqLocation" ColumnName="reqLocation" />
+          <ScalarProperty Name="reqPreviousBalance" ColumnName="reqPreviousBalance" />
+          <ScalarProperty Name="reqCurrentBalance" ColumnName="reqCurrentBalance" />
+          <ScalarProperty Name="reqCompanyRating" ColumnName="reqCompanyRating" />
+          <ScalarProperty Name="reqDate" ColumnName="reqDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="appPROFILEs">
+      <EntityTypeMapping TypeName="projectDBModel.appPROFILE">
+        <MappingFragment StoreEntitySet="appPROFILE">
+          <ScalarProperty Name="pID" ColumnName="pID" />
+          <ScalarProperty Name="pName" ColumnName="pName" />
+          <ScalarProperty Name="pTitle" ColumnName="pTitle" />
+          <ScalarProperty Name="pBody" ColumnName="pBody" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="financialstatus">
+      <EntityTypeMapping TypeName="projectDBModel.financialstatu">
+        <MappingFragment StoreEntitySet="financialstatus">
+          <ScalarProperty Name="fsID" ColumnName="fsID" />
+          <ScalarProperty Name="fsDate" ColumnName="fsDate" />
+          <ScalarProperty Name="PreviousBalance" ColumnName="PreviousBalance" />
+          <ScalarProperty Name="Withdraw" ColumnName="Withdraw" />
+          <ScalarProperty Name="CurrentBalance" ColumnName="CurrentBalance" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="posttables">
+      <EntityTypeMapping TypeName="projectDBModel.posttable">
+        <MappingFragment StoreEntitySet="posttable">
+          <ScalarProperty Name="postID" ColumnName="postID" />
+          <ScalarProperty Name="CName" ColumnName="CName" />
+          <ScalarProperty Name="postTitle" ColumnName="postTitle" />
+          <ScalarProperty Name="postBody" ColumnName="postBody" />
+          <ScalarProperty Name="postDate" ColumnName="postDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Registrations">
+      <EntityTypeMapping TypeName="projectDBModel.Registration">
+        <MappingFragment StoreEntitySet="Registration">
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Mobile" ColumnName="Mobile" />
+          <ScalarProperty Name="UserType" ColumnName="UserType" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="transacts">
+      <EntityTypeMapping TypeName="projectDBModel.transact">
+        <MappingFragment StoreEntitySet="transact">
+          <ScalarProperty Name="TID" ColumnName="TID" />
+          <ScalarProperty Name="InvestorName" ColumnName="InvestorName" />
+          <ScalarProperty Name="StartupName" ColumnName="StartupName" />
+          <ScalarProperty Name="InvestAmount" ColumnName="InvestAmount" />
+          <ScalarProperty Name="TDate" ColumnName="TDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="viewapplicants">
+      <EntityTypeMapping TypeName="projectDBModel.viewapplicant">
+        <MappingFragment StoreEntitySet="viewapplicant">
+          <ScalarProperty Name="appID" ColumnName="appID" />
+          <ScalarProperty Name="appName" ColumnName="appName" />
+          <ScalarProperty Name="appLocation" ColumnName="appLocation" />
+          <ScalarProperty Name="appPhone" ColumnName="appPhone" />
+          <ScalarProperty Name="appEmail" ColumnName="appEmail" />
+          <ScalarProperty Name="appRegDate" ColumnName="appRegDate" />
+          <ScalarProperty Name="appTypes" ColumnName="appTypes" />
+          <ScalarProperty Name="appPassword" ColumnName="appPassword" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

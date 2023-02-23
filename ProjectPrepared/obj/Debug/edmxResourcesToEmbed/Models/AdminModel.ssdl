@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="projectDBModel1.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="viewapplicant">
+    <Key>
+      <PropertyRef Name="appID" />
+    </Key>
+    <Property Name="appID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="appName" Type="varchar" MaxLength="50" />
+    <Property Name="appLocation" Type="varchar" MaxLength="50" />
+    <Property Name="appPhone" Type="varchar" MaxLength="50" />
+    <Property Name="appEmail" Type="varchar" MaxLength="50" />
+    <Property Name="appRegDate" Type="date" />
+    <Property Name="appTypes" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityContainer Name="projectDBModel1StoreContainer">
+    <EntitySet Name="viewapplicant" EntityType="Self.viewapplicant" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

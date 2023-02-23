@@ -1,0 +1,51 @@
+﻿@model IEnumerable<ProjectPrepared.Models.financialstatu>
+
+@{
+    ViewBag.Title = "FinancialStatus";
+    Layout = "~/Views/Shared/_StartLayout.cshtml";
+}
+
+<p>
+    @Html.ActionLink("Create New", "CreateFinancialStatus","Home", new { @class = "btn btn-primary" })
+</p>
+<table class="table table-bordered">
+    <tr>
+        
+        <th>
+            @Html.DisplayNameFor(model => model.fsDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PreviousBalance)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Withdraw)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CurrentBalance)
+        </th>
+        <th>Action</th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        
+        <td>
+            @Html.DisplayFor(modelItem => item.fsDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PreviousBalance)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Withdraw)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CurrentBalance)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ })
+            @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+        </td>
+    </tr>
+}
+
+</table>

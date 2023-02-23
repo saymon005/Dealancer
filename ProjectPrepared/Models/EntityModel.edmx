@@ -1,0 +1,331 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="projectDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="AdminRegistration">
+          <Key>
+            <PropertyRef Name="AdminId" />
+          </Key>
+          <Property Name="AdminId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="AdminFirstName" Type="varchar" MaxLength="250" />
+          <Property Name="AdminLastName" Type="varchar" MaxLength="250" />
+          <Property Name="AdminEmail" Type="varchar" MaxLength="50" />
+          <Property Name="AdminPassword" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="applicaition">
+          <Key>
+            <PropertyRef Name="reqID" />
+          </Key>
+          <Property Name="reqID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="reqName" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="reqLocation" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="reqPreviousBalance" Type="int" Nullable="false" />
+          <Property Name="reqCurrentBalance" Type="int" Nullable="false" />
+          <Property Name="reqCompanyRating" Type="int" Nullable="false" />
+          <Property Name="reqDate" Type="date" Nullable="false" />
+        </EntityType>
+        <EntityType Name="appPROFILE">
+          <Key>
+            <PropertyRef Name="pID" />
+          </Key>
+          <Property Name="pID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="pName" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="pTitle" Type="text" Nullable="false" />
+          <Property Name="pBody" Type="text" Nullable="false" />
+        </EntityType>
+        <EntityType Name="financialstatus">
+          <Key>
+            <PropertyRef Name="fsID" />
+          </Key>
+          <Property Name="fsID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="fsDate" Type="date" Nullable="false" />
+          <Property Name="PreviousBalance" Type="int" Nullable="false" />
+          <Property Name="Withdraw" Type="int" Nullable="false" />
+          <Property Name="CurrentBalance" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="posttable">
+          <Key>
+            <PropertyRef Name="postID" />
+          </Key>
+          <Property Name="postID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CName" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="postTitle" Type="text" Nullable="false" />
+          <Property Name="postBody" Type="text" Nullable="false" />
+          <Property Name="postDate" Type="datetime" />
+        </EntityType>
+        <EntityType Name="Registration">
+          <Key>
+            <PropertyRef Name="UserId" />
+          </Key>
+          <Property Name="UserId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="FirstName" Type="varchar" MaxLength="256" />
+          <Property Name="LastName" Type="varchar" MaxLength="256" />
+          <Property Name="UserName" Type="varchar" MaxLength="256" />
+          <Property Name="Password" Type="varchar" MaxLength="256" />
+          <Property Name="Email" Type="varchar" MaxLength="256" />
+          <Property Name="Mobile" Type="varchar" MaxLength="20" />
+          <Property Name="UserType" Type="varchar" MaxLength="20" />
+        </EntityType>
+        <EntityType Name="transact">
+          <Key>
+            <PropertyRef Name="TID" />
+          </Key>
+          <Property Name="TID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="InvestorName" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="StartupName" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="InvestAmount" Type="int" Nullable="false" />
+          <Property Name="TDate" Type="datetime" />
+        </EntityType>
+        <EntityType Name="viewapplicant">
+          <Key>
+            <PropertyRef Name="appID" />
+          </Key>
+          <Property Name="appID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="appName" Type="varchar" MaxLength="50" />
+          <Property Name="appLocation" Type="varchar" MaxLength="50" />
+          <Property Name="appPhone" Type="varchar" MaxLength="50" />
+          <Property Name="appEmail" Type="varchar" MaxLength="50" />
+          <Property Name="appRegDate" Type="datetime" />
+          <Property Name="appTypes" Type="varchar" MaxLength="50" />
+          <Property Name="appPassword" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityContainer Name="projectDBModelStoreContainer">
+          <EntitySet Name="AdminRegistration" EntityType="Self.AdminRegistration" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="applicaition" EntityType="Self.applicaition" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="appPROFILE" EntityType="Self.appPROFILE" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="financialstatus" EntityType="Self.financialstatus" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="posttable" EntityType="Self.posttable" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Registration" EntityType="Self.Registration" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="transact" EntityType="Self.transact" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="viewapplicant" EntityType="Self.viewapplicant" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="projectDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="AdminRegistration">
+          <Key>
+            <PropertyRef Name="AdminId" />
+          </Key>
+          <Property Name="AdminId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="AdminFirstName" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="AdminLastName" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="AdminEmail" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="AdminPassword" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="applicaition">
+          <Key>
+            <PropertyRef Name="reqID" />
+          </Key>
+          <Property Name="reqID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="reqName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="reqLocation" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="reqPreviousBalance" Type="Int32" Nullable="false" />
+          <Property Name="reqCurrentBalance" Type="Int32" Nullable="false" />
+          <Property Name="reqCompanyRating" Type="Int32" Nullable="false" />
+          <Property Name="reqDate" Type="DateTime" Nullable="false" Precision="0" />
+        </EntityType>
+        <EntityType Name="appPROFILE">
+          <Key>
+            <PropertyRef Name="pID" />
+          </Key>
+          <Property Name="pID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="pName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="pTitle" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="pBody" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityType Name="financialstatu">
+          <Key>
+            <PropertyRef Name="fsID" />
+          </Key>
+          <Property Name="fsID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="fsDate" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="PreviousBalance" Type="Int32" Nullable="false" />
+          <Property Name="Withdraw" Type="Int32" Nullable="false" />
+          <Property Name="CurrentBalance" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="posttable">
+          <Key>
+            <PropertyRef Name="postID" />
+          </Key>
+          <Property Name="postID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="postTitle" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="postBody" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="postDate" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="Registration">
+          <Key>
+            <PropertyRef Name="UserId" />
+          </Key>
+          <Property Name="UserId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="FirstName" Type="String" MaxLength="256" FixedLength="false" Unicode="false" />
+          <Property Name="LastName" Type="String" MaxLength="256" FixedLength="false" Unicode="false" />
+          <Property Name="UserName" Type="String" MaxLength="256" FixedLength="false" Unicode="false" />
+          <Property Name="Password" Type="String" MaxLength="256" FixedLength="false" Unicode="false" />
+          <Property Name="Email" Type="String" MaxLength="256" FixedLength="false" Unicode="false" />
+          <Property Name="Mobile" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="UserType" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="transact">
+          <Key>
+            <PropertyRef Name="TID" />
+          </Key>
+          <Property Name="TID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="InvestorName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="StartupName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="InvestAmount" Type="Int32" Nullable="false" />
+          <Property Name="TDate" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="viewapplicant">
+          <Key>
+            <PropertyRef Name="appID" />
+          </Key>
+          <Property Name="appID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="appName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="appLocation" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="appPhone" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="appEmail" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="appRegDate" Type="DateTime" Precision="3" />
+          <Property Name="appTypes" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="appPassword" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityContainer Name="projectDBEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="AdminRegistrations" EntityType="Self.AdminRegistration" />
+          <EntitySet Name="applicaitions" EntityType="Self.applicaition" />
+          <EntitySet Name="appPROFILEs" EntityType="Self.appPROFILE" />
+          <EntitySet Name="financialstatus" EntityType="Self.financialstatu" />
+          <EntitySet Name="posttables" EntityType="Self.posttable" />
+          <EntitySet Name="Registrations" EntityType="Self.Registration" />
+          <EntitySet Name="transacts" EntityType="Self.transact" />
+          <EntitySet Name="viewapplicants" EntityType="Self.viewapplicant" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="projectDBModelStoreContainer" CdmEntityContainer="projectDBEntities">
+          <EntitySetMapping Name="AdminRegistrations">
+            <EntityTypeMapping TypeName="projectDBModel.AdminRegistration">
+              <MappingFragment StoreEntitySet="AdminRegistration">
+                <ScalarProperty Name="AdminId" ColumnName="AdminId" />
+                <ScalarProperty Name="AdminFirstName" ColumnName="AdminFirstName" />
+                <ScalarProperty Name="AdminLastName" ColumnName="AdminLastName" />
+                <ScalarProperty Name="AdminEmail" ColumnName="AdminEmail" />
+                <ScalarProperty Name="AdminPassword" ColumnName="AdminPassword" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="applicaitions">
+            <EntityTypeMapping TypeName="projectDBModel.applicaition">
+              <MappingFragment StoreEntitySet="applicaition">
+                <ScalarProperty Name="reqID" ColumnName="reqID" />
+                <ScalarProperty Name="reqName" ColumnName="reqName" />
+                <ScalarProperty Name="reqLocation" ColumnName="reqLocation" />
+                <ScalarProperty Name="reqPreviousBalance" ColumnName="reqPreviousBalance" />
+                <ScalarProperty Name="reqCurrentBalance" ColumnName="reqCurrentBalance" />
+                <ScalarProperty Name="reqCompanyRating" ColumnName="reqCompanyRating" />
+                <ScalarProperty Name="reqDate" ColumnName="reqDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="appPROFILEs">
+            <EntityTypeMapping TypeName="projectDBModel.appPROFILE">
+              <MappingFragment StoreEntitySet="appPROFILE">
+                <ScalarProperty Name="pID" ColumnName="pID" />
+                <ScalarProperty Name="pName" ColumnName="pName" />
+                <ScalarProperty Name="pTitle" ColumnName="pTitle" />
+                <ScalarProperty Name="pBody" ColumnName="pBody" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="financialstatus">
+            <EntityTypeMapping TypeName="projectDBModel.financialstatu">
+              <MappingFragment StoreEntitySet="financialstatus">
+                <ScalarProperty Name="fsID" ColumnName="fsID" />
+                <ScalarProperty Name="fsDate" ColumnName="fsDate" />
+                <ScalarProperty Name="PreviousBalance" ColumnName="PreviousBalance" />
+                <ScalarProperty Name="Withdraw" ColumnName="Withdraw" />
+                <ScalarProperty Name="CurrentBalance" ColumnName="CurrentBalance" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="posttables">
+            <EntityTypeMapping TypeName="projectDBModel.posttable">
+              <MappingFragment StoreEntitySet="posttable">
+                <ScalarProperty Name="postID" ColumnName="postID" />
+                <ScalarProperty Name="CName" ColumnName="CName" />
+                <ScalarProperty Name="postTitle" ColumnName="postTitle" />
+                <ScalarProperty Name="postBody" ColumnName="postBody" />
+                <ScalarProperty Name="postDate" ColumnName="postDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Registrations">
+            <EntityTypeMapping TypeName="projectDBModel.Registration">
+              <MappingFragment StoreEntitySet="Registration">
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Mobile" ColumnName="Mobile" />
+                <ScalarProperty Name="UserType" ColumnName="UserType" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="transacts">
+            <EntityTypeMapping TypeName="projectDBModel.transact">
+              <MappingFragment StoreEntitySet="transact">
+                <ScalarProperty Name="TID" ColumnName="TID" />
+                <ScalarProperty Name="InvestorName" ColumnName="InvestorName" />
+                <ScalarProperty Name="StartupName" ColumnName="StartupName" />
+                <ScalarProperty Name="InvestAmount" ColumnName="InvestAmount" />
+                <ScalarProperty Name="TDate" ColumnName="TDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="viewapplicants">
+            <EntityTypeMapping TypeName="projectDBModel.viewapplicant">
+              <MappingFragment StoreEntitySet="viewapplicant">
+                <ScalarProperty Name="appID" ColumnName="appID" />
+                <ScalarProperty Name="appName" ColumnName="appName" />
+                <ScalarProperty Name="appLocation" ColumnName="appLocation" />
+                <ScalarProperty Name="appPhone" ColumnName="appPhone" />
+                <ScalarProperty Name="appEmail" ColumnName="appEmail" />
+                <ScalarProperty Name="appRegDate" ColumnName="appRegDate" />
+                <ScalarProperty Name="appTypes" ColumnName="appTypes" />
+                <ScalarProperty Name="appPassword" ColumnName="appPassword" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

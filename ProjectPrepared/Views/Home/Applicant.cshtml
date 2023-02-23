@@ -1,0 +1,62 @@
+﻿@model IEnumerable<ProjectPrepared.Models.applicaition>
+
+@{
+    ViewBag.Title = "Applicant";
+    Layout = "~/Views/Shared/_InvestorLayout.cshtml";
+}
+
+
+<table class="table table-bordered">
+    <tr>
+     
+        <th>
+            @Html.DisplayNameFor(model => model.reqName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.reqLocation)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.reqPreviousBalance)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.reqCurrentBalance)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.reqCompanyRating)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.reqDate)
+        </th>
+        <th>Action</th>
+        
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+       
+        <td>
+            @Html.DisplayFor(modelItem => item.reqName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.reqLocation)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.reqPreviousBalance)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.reqCurrentBalance)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.reqCompanyRating)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.reqDate)
+        </td>
+        <td>
+            @Html.ActionLink("Accept", "CreateTransaction", "Home", new { @class = "btn btn-success" })
+
+        </td>
+    </tr>
+}
+
+</table>

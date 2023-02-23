@@ -1,0 +1,37 @@
+﻿@model ProjectPrepared.Models.PostClass
+@{
+    ViewBag.Title = "GetPost";
+    Layout = "~/Views/Shared/_StartLayout.cshtml";
+}
+
+
+<div>
+
+    <% List<ProjectPrepared.Models.PostClass>
+    Li = (List<ProjectPrepared.Models.PostClass>
+        ) ViewData["Post"];%>
+        <table>
+            <tr>
+                <td></td>
+                <td>Person Information</td>
+            </tr>
+            <% foreach (ProjectPrepared.Models.PostClass P in Li)
+            { %>
+            <tr>
+
+                <td><%= P.CName%></td>
+
+                <td><%= P.postTitle%></td>
+                <td><%= P.postBody%></td>
+
+                <td><%= P.postDate%></td>
+            </tr>
+            <% } %>
+
+        </table>
+
+    </ProjectPrepared.Models.PostClass>
+
+</ProjectPrepared.Models.PostClass>
+
+</div>

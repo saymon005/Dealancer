@@ -1,0 +1,52 @@
+﻿@model IEnumerable<ProjectPrepared.Models.posttable>
+
+@{
+    ViewBag.Title = "managepost";
+    Layout = "~/Views/Shared/_InvestorLayout.cshtml";
+}
+
+
+<p>
+    @Html.ActionLink("Create New", "CreatePost","Home", new { @class = "btn btn-danger" })
+</p>
+<table class="table table-bordered">
+    <tr>
+        
+        <th>
+            @Html.DisplayNameFor(model => model.CName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.postTitle)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.postBody)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.postDate)
+        </th>
+        <th>Action</th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        
+        <td>
+            @Html.DisplayFor(modelItem => item.CName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.postTitle)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.postBody)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.postDate)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) 
+            @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+        </td>
+    </tr>
+}
+
+</table>

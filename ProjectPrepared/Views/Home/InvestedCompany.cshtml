@@ -1,0 +1,53 @@
+﻿@model IEnumerable<ProjectPrepared.Models.transact>
+
+@{
+    ViewBag.Title = "InvestedCompany";
+    Layout = "~/Views/Shared/_InvestorLayout.cshtml";
+}
+
+
+<p>
+    @Html.ActionLink("Create New", "CreateTransaction","Home", null, new { @class = "btn btn-success" })
+</p>
+<table class="table table-bordered">
+    <tr>
+        
+        <th>
+            @Html.DisplayNameFor(model => model.InvestorName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.StartupName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.InvestAmount)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TDate)
+        </th>
+        <th>Action</th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        
+        <td>
+            @Html.DisplayFor(modelItem => item.InvestorName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.StartupName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.InvestAmount)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TDate)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Details", "InvestorCompany", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+        </td>
+    </tr>
+}
+
+</table>

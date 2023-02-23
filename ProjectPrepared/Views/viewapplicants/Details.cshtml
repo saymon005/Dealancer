@@ -1,0 +1,66 @@
+﻿@model ProjectPrepared.Models.viewapplicant
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.appName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.appName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.appLocation)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.appLocation)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.appPhone)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.appPhone)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.appEmail)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.appEmail)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.appRegDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.appRegDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.appTypes)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.appTypes)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.appID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

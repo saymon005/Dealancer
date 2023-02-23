@@ -1,0 +1,49 @@
+﻿@model IEnumerable< ProjectPrepared.Models.posttable>
+
+@{
+    ViewBag.Title = "ViewPost";
+    Layout = "~/Views/Shared/_StartLayout.cshtml";
+}
+
+
+<table class="table table-bordered">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.CName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.postTitle)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.postBody)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.postDate)
+        </th>
+        <th>Action</th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.CName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.postTitle)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.postBody)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.postDate)
+            </td>
+            <td>
+                @Html.ActionLink("Apply", "CreateApplicant", "Home", new { @class = "btn btn-primary" })
+                
+            </td>
+        </tr>
+    }
+
+</table>
+

@@ -1,0 +1,46 @@
+﻿@model IEnumerable<ProjectPrepared.Models.transact>
+@{
+    ViewBag.Title = "InvestorCompany";
+    Layout = "~/Views/Shared/_StartLayout.cshtml";
+}
+
+
+<table class="table table-bordered">
+    <tr>
+        
+        <th>
+            @Html.DisplayNameFor(model => model.InvestorName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.StartupName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.InvestAmount)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TDate)
+        </th>
+       
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            
+            <td>
+                @Html.DisplayFor(modelItem => item.InvestorName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.StartupName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.InvestAmount)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TDate)
+            </td>
+            
+        </tr>
+    }
+
+</table>

@@ -1,0 +1,100 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="projectDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="AdminRegistration">
+    <Key>
+      <PropertyRef Name="AdminId" />
+    </Key>
+    <Property Name="AdminId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="AdminFirstName" Type="varchar" MaxLength="250" />
+    <Property Name="AdminLastName" Type="varchar" MaxLength="250" />
+    <Property Name="AdminEmail" Type="varchar" MaxLength="50" />
+    <Property Name="AdminPassword" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="applicaition">
+    <Key>
+      <PropertyRef Name="reqID" />
+    </Key>
+    <Property Name="reqID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="reqName" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="reqLocation" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="reqPreviousBalance" Type="int" Nullable="false" />
+    <Property Name="reqCurrentBalance" Type="int" Nullable="false" />
+    <Property Name="reqCompanyRating" Type="int" Nullable="false" />
+    <Property Name="reqDate" Type="date" Nullable="false" />
+  </EntityType>
+  <EntityType Name="appPROFILE">
+    <Key>
+      <PropertyRef Name="pID" />
+    </Key>
+    <Property Name="pID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="pName" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="pTitle" Type="text" Nullable="false" />
+    <Property Name="pBody" Type="text" Nullable="false" />
+  </EntityType>
+  <EntityType Name="financialstatus">
+    <Key>
+      <PropertyRef Name="fsID" />
+    </Key>
+    <Property Name="fsID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="fsDate" Type="date" Nullable="false" />
+    <Property Name="PreviousBalance" Type="int" Nullable="false" />
+    <Property Name="Withdraw" Type="int" Nullable="false" />
+    <Property Name="CurrentBalance" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="posttable">
+    <Key>
+      <PropertyRef Name="postID" />
+    </Key>
+    <Property Name="postID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CName" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="postTitle" Type="text" Nullable="false" />
+    <Property Name="postBody" Type="text" Nullable="false" />
+    <Property Name="postDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Registration">
+    <Key>
+      <PropertyRef Name="UserId" />
+    </Key>
+    <Property Name="UserId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FirstName" Type="varchar" MaxLength="256" />
+    <Property Name="LastName" Type="varchar" MaxLength="256" />
+    <Property Name="UserName" Type="varchar" MaxLength="256" />
+    <Property Name="Password" Type="varchar" MaxLength="256" />
+    <Property Name="Email" Type="varchar" MaxLength="256" />
+    <Property Name="Mobile" Type="varchar" MaxLength="20" />
+    <Property Name="UserType" Type="varchar" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="transact">
+    <Key>
+      <PropertyRef Name="TID" />
+    </Key>
+    <Property Name="TID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="InvestorName" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="StartupName" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="InvestAmount" Type="int" Nullable="false" />
+    <Property Name="TDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="viewapplicant">
+    <Key>
+      <PropertyRef Name="appID" />
+    </Key>
+    <Property Name="appID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="appName" Type="varchar" MaxLength="50" />
+    <Property Name="appLocation" Type="varchar" MaxLength="50" />
+    <Property Name="appPhone" Type="varchar" MaxLength="50" />
+    <Property Name="appEmail" Type="varchar" MaxLength="50" />
+    <Property Name="appRegDate" Type="datetime" />
+    <Property Name="appTypes" Type="varchar" MaxLength="50" />
+    <Property Name="appPassword" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityContainer Name="projectDBModelStoreContainer">
+    <EntitySet Name="AdminRegistration" EntityType="Self.AdminRegistration" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="applicaition" EntityType="Self.applicaition" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="appPROFILE" EntityType="Self.appPROFILE" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="financialstatus" EntityType="Self.financialstatus" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="posttable" EntityType="Self.posttable" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Registration" EntityType="Self.Registration" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="transact" EntityType="Self.transact" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="viewapplicant" EntityType="Self.viewapplicant" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>
